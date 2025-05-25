@@ -1,18 +1,24 @@
 import styled from "styled-components";
 
+type SkillBarPropsType = {
+    width?:string;
+    height?:string;
+
+}
 
 
-export const SkillBar = (props:{width:string}) => {
+
+export const SkillBar = (props:SkillBarPropsType) => {
     return (
-        <SkillBarr>
-            <Fill width={props.width}/>
+        <SkillBarr height={props.height}>
+            <Fill width={props.width} />
         </SkillBarr>
     );
 };
 
 
- const SkillBarr = styled.div`
-  height: 18px;
+ const SkillBarr = styled.div<SkillBarPropsType>`
+  height: ${props => props.height};
   width: 100%;
   background-color: #162950;
   border-radius: 10px;
@@ -20,7 +26,7 @@ export const SkillBar = (props:{width:string}) => {
   overflow: hidden;
 `;
 
-const Fill = styled.div<{ width:string}>`
+const Fill = styled.div<SkillBarPropsType>`
     height: 100%;
     width: ${props => props.width || "100%"};
     background: linear-gradient(

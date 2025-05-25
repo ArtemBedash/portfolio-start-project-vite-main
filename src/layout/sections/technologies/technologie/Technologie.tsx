@@ -4,6 +4,7 @@ import {SkillBar} from "../../../../components/skillbar/SkillBar.tsx";
 type TechnologiePropsType = {
     title: string;
     width: string;
+    height: string;
 
 
 }
@@ -14,7 +15,7 @@ export const Technologie = (props: TechnologiePropsType) => {
         <StyledTechnologie>
 
             <Title>{props.title}</Title>
-            <SkillBar width={props.width}/>
+            <SkillBar width={props.width} height={props.height}/>
         </StyledTechnologie>
 
 
