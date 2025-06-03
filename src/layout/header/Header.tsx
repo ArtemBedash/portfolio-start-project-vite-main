@@ -3,19 +3,38 @@ import {Logo} from "../../components/logo/Logo.tsx";
 import {Menu} from "../../components/menu/Menu.tsx";
 import {FlexWrapper} from "../../components/FlexWrapper.tsx";
 import {Icon} from "../../components/icon/Icon.tsx";
+import {Container} from "../../components/Container.tsx";
 
 export const Header = () => {
 
 
     return (
         <StyledHeader>
-            <Logo />
-            <Menu/>
-            <FlexWrapper justify="space-around">
-                <Icon iconId={"telegram"} height={"100%"}  viewBox={"0 0 50 50"}></Icon>
-                <Icon iconId={"git"}  height={"70%"} viewBox={"0 0 100 100"}></Icon>
-                <Icon iconId={"linkedIn"} height={"100%"} viewBox={"0 0 50 50"}></Icon>
-            </FlexWrapper>
+            <Container>
+                <FlexWrapper justify={'space-between'} align={'center'}>
+                    <SocialIconLink href="">
+                        <Logo/>
+                        Portfolio
+                    </SocialIconLink>
+
+
+                    <Menu/>
+                    <FlexWrapper justify="space-around">
+                        <SocialIconLink>
+                            <Icon iconId={"telegram"}></Icon>
+                        </SocialIconLink>
+
+                        <SocialIconLink>
+                            <Icon iconId={"git"} height={"70%"} viewBox={"0 0 100 100"}></Icon>
+                        </SocialIconLink>
+                        <SocialIconLink>
+                            <Icon iconId={"linkedIn"}></Icon>
+                        </SocialIconLink>
+                    </FlexWrapper>
+
+                </FlexWrapper>
+
+            </Container>
 
 
         </StyledHeader>
@@ -27,8 +46,18 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
 
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
+    background: #0F1624;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 
+`
+
+const SocialIconLink = styled.a`
+    color: white;
+    font-weight: bold;
+    display: flex;
 `

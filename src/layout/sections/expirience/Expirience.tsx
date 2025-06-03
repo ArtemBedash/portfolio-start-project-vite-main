@@ -6,36 +6,39 @@ export const Expirience = () => {
     return (
         <StyledExpirience>
             <StyledHeader>Expirience</StyledHeader>
-
             <FlexWrapper justify="space-around">
+
+            <FlexWrapper direction="column">
                 <StyledYears>2015</StyledYears>
-                <StyledYears>2017</StyledYears>
-                <StyledYears>2018</StyledYears>
-                <StyledYears>2019</StyledYears>
-                <StyledYears>2025</StyledYears>
+                <StyledParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor t ut
+                    labore et dolore magna aliqua.</StyledParagraph>
             </FlexWrapper>
-            <SkillBar width={"100%"} height={"8px"}/>
-            <FlexWrapper justify="space-around">
+            <FlexWrapper direction="column">
+                <StyledYears>2015</StyledYears>
                 <StyledParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor t ut
                     labore et dolore magna aliqua.</StyledParagraph>
+            </FlexWrapper>
+            <FlexWrapper direction="column">
+                <StyledYears>2015</StyledYears>
                 <StyledParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor t ut
                     labore et dolore magna aliqua.</StyledParagraph>
+            </FlexWrapper>
+            <FlexWrapper direction="column">
+                <StyledYears>2015</StyledYears>
                 <StyledParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor t ut
                     labore et dolore magna aliqua.</StyledParagraph>
-                <StyledParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor t ut
-                    labore et dolore magna aliqua.</StyledParagraph>
-                <StyledParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor t ut
-                    labore et dolore magna aliqua.</StyledParagraph>
+            </FlexWrapper>
+            </FlexWrapper>
 
 
-            </FlexWrapper>
+            {/*<SkillBar width={"100%"} height={"8px"}/>*/}
+
 
         </StyledExpirience>
     );
 };
 
-const StyledExpirience = styled.div`
-    background-color: #161D2A;
+const StyledExpirience = styled.section`
 `
 
 const StyledHeader = styled.h2`
@@ -50,7 +53,5 @@ const StyledYears = styled.span`
 
 const StyledParagraph = styled.p`
     color: white;
-    font-family: Poppins;
-    font-size: 18px;
 `
 
