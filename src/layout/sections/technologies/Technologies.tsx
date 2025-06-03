@@ -11,9 +11,9 @@ export const Technologies = () => {
         <StyledTechnologies>
             <StyledHeader>Technologies</StyledHeader>
             <FlexWrapper direction={'column'}>
-                <Technologie title={"Html"} width={"70%"}  height={"18px"} />
-                <Technologie title={"CSS"} width={"60%"}  height={"18px"}/>
-                <Technologie title={"StyledComponents"} width={"70%"} height={"18px"}/>
+                <Technologie title={"Html"} widthOfFill={"70%"}  height={"18px"} />
+                <Technologie title={"CSS"} widthOfFill={"60%"}  height={"18px"}/>
+                <Technologie title={"StyledComponents"} widthOfFill={"70%"} height={"18px"}/>
             </FlexWrapper>
             <StyledHeader>Additional technologies and skills</StyledHeader>
             <FlexWrapper justify={"center"}>
@@ -29,8 +29,7 @@ export const Technologies = () => {
     )
 }
 
-const StyledTechnologies = styled.div`
-    background-color: #0F1624;
+const StyledTechnologies = styled.section`
     min-height: 100vh;
 `
 const StyledHeader = styled.h2`
