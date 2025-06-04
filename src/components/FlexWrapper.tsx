@@ -19,6 +19,7 @@ export const FlexWrapper = styled.div<FlexWrapperPropsType>`
     flex-wrap: ${props => props.wrap || "nowrap"};
 
     gap: ${({ gap }) => gap || "0"};
+    
 
 
 `

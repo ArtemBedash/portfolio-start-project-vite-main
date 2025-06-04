@@ -2,8 +2,8 @@ import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo.tsx";
 import {Menu} from "../../components/menu/Menu.tsx";
 import {FlexWrapper} from "../../components/FlexWrapper.tsx";
-import {Icon} from "../../components/icon/Icon.tsx";
 import {Container} from "../../components/Container.tsx";
+import {IconList} from "../../components/iconlist/IconList.tsx";
 
 export const Header = () => {
 
@@ -14,25 +14,16 @@ export const Header = () => {
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <SocialIconLink href="">
                         <Logo/>
-                        Portfolio
+                        <Name>Portfolio</Name>
+
                     </SocialIconLink>
 
 
                     <Menu/>
-                    <FlexWrapper justify="space-around">
-                        <SocialIconLink>
-                            <Icon iconId={"telegram"}></Icon>
-                        </SocialIconLink>
-
-                        <SocialIconLink>
-                            <Icon iconId={"git"} height={"70%"} viewBox={"0 0 100 100"}></Icon>
-                        </SocialIconLink>
-                        <SocialIconLink>
-                            <Icon iconId={"linkedIn"}></Icon>
-                        </SocialIconLink>
-                    </FlexWrapper>
-
+                    <IconList/>
                 </FlexWrapper>
+
+
 
             </Container>
 
@@ -61,3 +52,12 @@ const SocialIconLink = styled.a`
     font-weight: bold;
     display: flex;
 `
+
+const Name = styled.span`
+    font-weight: 500;
+    font-size: 30px;
+`
+
+
+
+

@@ -23,7 +23,7 @@ export const Project = (props: ProjectPropsType) => {
             </FlexWrapper>
 
             <Text>{props.text}</Text>
-            <StyledButton width={"200px"} borderRadius={"83px"}>Look it up</StyledButton>
+            <StyledButton width={"200px"} borderRadius={"83px"} height={'60px'}>Look it up</StyledButton>
 
 
         </StyledWork>
@@ -56,7 +56,7 @@ const Title = styled.h3`
     font-size: 30px;
     line-height: 89%;
     color: ${Theme.colors.font};
-    margin-bottom: 23px;
+    margin-bottom: 25px;
 
 
 `
