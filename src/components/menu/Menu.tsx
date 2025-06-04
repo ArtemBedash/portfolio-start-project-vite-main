@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import {Theme} from "../../styles/Theme.ts";
+import styled, {keyframes} from "styled-components";
 
 const menuItems = ["Projects", "Technologies", "About me"]
 
@@ -11,12 +10,6 @@ export const Menu = () => {
                     return <ListItem key={index}>
                         <StyledLink href="">
                             {item}
-                            <Mask>
-                                <span>{item}</span>
-                            </Mask>
-                            <Mask>
-                                <span>{item}</span>
-                            </Mask>
                         </StyledLink>
                     </ListItem>;
                 })}
@@ -35,47 +28,65 @@ const StyledMenu = styled.nav`
 
 `
 
-const StyledLink = styled.a`
+const moveGradient = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+`
 
+export const StyledLink = styled.a`
     font-family: Poppins, sans-serif;
     font-weight: 500;
     font-size: 16px;
     text-align: center;
     color: #fff;
+    position: relative;
+    text-decoration: none;
+    padding: 4px 12px;
+    transition: color 0.3s ease;
+
+    //&:hover {
+    //    color: #945DD6; 
+    //}
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 8px;
+        background: linear-gradient(
+                270deg,
+                #13ADC7,
+                #6978D1,
+                #945DD6,
+                #13ADC7
+        );
+        background-size: 400% 400%;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        animation: none;
+    }
+
+    &:hover::before {
+        opacity: 1;
+        animation: ${moveGradient} 3s linear infinite;
+    }
 `
 
 
 
-const Mask = styled.span`
-position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    height: 50%;
-    overflow-y: hidden;
-    outline: 1px solid red;
-    color: ${Theme.colors.font};
-    
-    & + & {
-    top: 50%;
-        span {
-            display: inline-block;
-            trasform: translateY(-50%);
-        }
-}
-`
+
+
+
 const ListItem = styled.li`
     
-    position: relative;
     
-    &:hover {
-        ${Mask} {
-            
-            transform: skewX(12deg) translateX(5px);
-        }
-        
-        & + & {
-            transform: skew(12deg) translateX(-5px);
-        }
-    }
+  
 `

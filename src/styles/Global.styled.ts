@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
     button {
         background-color: unset;
         border: none;
+        cursor: pointer;
     }
     
     section:nth-of-type(odd) {

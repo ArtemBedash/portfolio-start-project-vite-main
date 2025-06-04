@@ -28,7 +28,6 @@ const StyledTechnologie = styled.div`
     background-color: #0F1624;
 `
 const Title = styled.h3`
-    margin: 0;
     color: white;
 `
 

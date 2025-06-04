@@ -1,6 +1,6 @@
-import {Icon} from "../../components/icon/Icon.tsx";
 import {FlexWrapper} from "../../components/FlexWrapper.tsx";
 import styled from "styled-components";
+import {IconList} from "../../components/iconlist/IconList.tsx";
 
 export const Footer = () => {
     return (
@@ -17,18 +17,7 @@ export const Footer = () => {
                         <StyledContactsLink href="mailto:example@mail.com">example@mail.com</StyledContactsLink>
                     </FlexWrapper>
 
-                    <FlexWrapper>
-                        <SocialIconLink>
-                            <Icon iconId={"telegram"}></Icon>
-                        </SocialIconLink>
-
-                        <SocialIconLink>
-                            <Icon iconId={"git"} height={"70%"} viewBox={"0 0 100 100"}></Icon>
-                        </SocialIconLink>
-                        <SocialIconLink>
-                            <Icon iconId={"linkedIn"}></Icon>
-                        </SocialIconLink>
-                    </FlexWrapper>
+                 <IconList/>
                 </FlexWrapper>
                 <Copyright> (c) all rights are reserved to their respective owners</Copyright>
         </StyledFooter>
@@ -54,9 +43,8 @@ const StyledContactsLink = styled.a`
 `
 
 
-const SocialIconLink = styled.a``
 
 const Copyright = styled.small`
-//text-color: white;
+color: white;
 `
 
