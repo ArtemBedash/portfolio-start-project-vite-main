@@ -17,7 +17,7 @@ export const Project = (props: ProjectPropsType) => {
     return (
         <StyledWork>
             <Image src={props.src}/>
-            <FlexWrapper direction={"column"} align={"center"} >
+            <FlexWrapper direction={"column"} align={"center"} mobileDirection={"column"} >
                 <Title>{props.title}</Title>
                 <SkillBar width={"300px"} height={"4px"}/>
             </FlexWrapper>
@@ -40,6 +40,12 @@ const StyledWork = styled.div`
     border-radius: 50px 0;
     height: auto;
     padding: 25px 25px 40px 25px;
+    
+    @media ${Theme.media.tablet} {
+        
+        width: 100%;
+        
+    }
 
 
 `

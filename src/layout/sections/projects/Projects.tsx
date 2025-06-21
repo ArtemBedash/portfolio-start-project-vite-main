@@ -6,16 +6,17 @@ import {Container} from "../../../components/Container.tsx";
 import Guitar from "../../../assets/images/Projects/guitar-fender-strat-2d4a6b-1024.jpg"
 import Trombone from "../../../assets/images/Projects/trombon.jpeg"
 import Harp from "../../../assets/images/Projects/harp.jpg"
+import {Theme} from "../../../styles/Theme.ts";
 export const Projects = () => {
 
 
     return (
 
 
-        <StyledProjects>
+        <StyledProjects id="projects">
             <Container>
                 <StyledHeader>Projects</StyledHeader>
-                <FlexWrapper gap={"42px"} wrap={"wrap"}>
+                <FlexWrapper mobileGap={"30px"} gap={"42px"} wrap={"wrap"} mobileDirection={"column"}>
 
                     <Project
                         src={Guitar}
@@ -58,6 +59,13 @@ export const Projects = () => {
 const StyledProjects = styled.section`
     
     padding: 100px 0 140px 0;
+    
+    @media${Theme.media.tablet}{
+        
+        padding: 70px 15px;
+    }
+    
+   
 
 `
 const StyledHeader = styled.h2`
@@ -66,4 +74,10 @@ const StyledHeader = styled.h2`
     font-weight: 600;
     font-size: 46px;
     margin-bottom: 70px;
-`
+    max-width: 100%;
+    text-align: left;
+    @media ${Theme.media.tablet} {
+
+        text-align: center;
+
+    }`
