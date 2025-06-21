@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Theme} from "../../styles/Theme.ts";
 
 type StyledButtonPropsType = {
 
@@ -13,6 +14,9 @@ export const StyledButton = styled.button<StyledButtonPropsType>`
     width: ${props => props.width};
     height: ${props => props.height};
     border-radius: ${props => props.borderRadius};
+    
+    font-size: 18px;
+    font-weight: 600;
 
     background: linear-gradient(
             to right,
@@ -65,7 +69,11 @@ export const StyledButton = styled.button<StyledButtonPropsType>`
     }
 
     
-
+@media ${Theme.media.tablet} {
+    
+    max-width: 100%;
+    
+}
 
 
 `

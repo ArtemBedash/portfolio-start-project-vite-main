@@ -1,6 +1,19 @@
 import styled, {keyframes} from "styled-components";
+import {Theme} from "../../styles/Theme.ts";
 
-const menuItems = ["Projects", "Technologies", "About me"]
+const menuItems = [
+    {
+        title: "Projects",
+        href: "projects"
+    },
+    {
+        title: "Technologies",
+        href: "technologies"
+    },
+    {
+        title: "Expirience",
+        href: "expirience"
+    }]
 
 export const Menu = () => {
     return (
@@ -8,13 +21,14 @@ export const Menu = () => {
             <ul>
                 {menuItems.map((item, index) => {
                     return <ListItem key={index}>
-                        <StyledLink href="">
-                            {item}
+                        <StyledLink href={`#${item.href}`}>
+                            {item.title}
                         </StyledLink>
                     </ListItem>;
                 })}
 
             </ul>
+
         </StyledMenu>
     );
 };
@@ -26,15 +40,22 @@ const StyledMenu = styled.nav`
         justify-content: center;
     }
 
+    @media ${Theme.media.tablet} {
+
+        display: none;
+
+    }
+
+
 `
 
 const moveGradient = keyframes`
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
 `
 
 export const StyledLink = styled.a`
@@ -81,12 +102,8 @@ export const StyledLink = styled.a`
 `
 
 
-
-
-
-
 const ListItem = styled.li`
-    
-    
-  
+
+
+
 `
